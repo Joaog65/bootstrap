@@ -1,143 +1,102 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 
-    <!-- Define a codificação dos caracteres da página. -->
+    <!-- Define a codificação dos caracteres -->
     <meta charset="UTF-8">
 
-    <!-- Faz o site se adaptar a celulares, tablets e computadores. -->
+    <!-- Faz o site se adaptar a celulares e tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Define o título que aparecerá na aba do navegador. -->
-    <title>Meu Amigo Pet | Pet Shop</title>
+    <!-- Título da página -->
+    <title>Meu Amigo Pet | Início</title>
 
-    <!-- Importa o Bootstrap para ajudar na responsividade. -->
+    <!-- Importa o Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-    <!-- Permite carregar fontes externas do Google. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <!-- Cria uma conexão antecipada com o servidor de fontes. -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Importa a fonte Poppins. -->
+    <!-- Importa a fonte Poppins -->
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Conecta o HTML ao arquivo CSS externo. -->
+    <!-- Importa nosso CSS -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-
 <body>
 
+    <!-- ================= NAVBAR ================= -->
 
-    <!-- ================================================= -->
-    <!-- NAVBAR -->
-    <!-- ================================================= -->
+    <nav class="navbar navbar-expand-lg fixed-top">
 
-    <!-- Cria a barra de navegação principal. -->
-    <nav class="navbar navbar-expand-lg site-navbar">
-
-        <!-- Mantém o conteúdo centralizado e responsivo. -->
         <div class="container">
 
-            <!-- Logo da empresa. -->
-            <a class="navbar-brand brand" href="#inicio">
-
-                <!-- Ícone da marca. -->
-                <span class="brand-icon">🐾</span>
-
-                <!-- Nome da empresa. -->
-                <span>Meu Amigo Pet</span>
-
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                🐾 Meu Amigo Pet
             </a>
 
-
-            <!-- Botão que aparece em celulares. -->
+            <!-- Botão do menu no celular -->
             <button
                 class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#menuPrincipal"
-                aria-controls="menuPrincipal"
-                aria-expanded="false"
-                aria-label="Abrir menu"
             >
-
-                <!-- Ícone visual do menu. -->
-                <span class="menu-icon">☰</span>
-
+                <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
 
-            <!-- Área que contém os links da navbar. -->
-            <div
-                class="collapse navbar-collapse"
-                id="menuPrincipal"
-            >
-
-                <!-- Lista de links. -->
                 <ul class="navbar-nav ms-auto align-items-lg-center">
 
-                    <!-- Link para a página inicial. -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="#inicio">
+                        <a class="nav-link active" href="index.html">
                             Início
                         </a>
                     </li>
 
-                    <!-- Link para produtos. -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#produtos">
+                        <a class="nav-link" href="produtos.html">
                             Produtos
                         </a>
                     </li>
 
-                    <!-- Link para serviços. -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicos">
+                        <a class="nav-link" href="servicos.html">
                             Serviços
                         </a>
                     </li>
 
-                    <!-- Link para benefícios. -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#cuidados">
+                        <a class="nav-link" href="cuidados.html">
                             Cuidados
                         </a>
                     </li>
 
-                    <!-- Link para contato. -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">
+                        <a class="nav-link" href="contato.html">
                             Contato
                         </a>
                     </li>
 
-                    <!-- Botão de troca de tema. -->
-                    <li class="nav-item theme-item">
+                    <!-- Botão do modo escuro -->
+                    <li class="nav-item ms-lg-3">
 
-                        <!-- Botão que será controlado pelo JavaScript. -->
                         <button
                             id="btnTema"
-                            class="theme-toggle"
-                            type="button"
+                            class="btn-tema"
                             aria-label="Ativar modo escuro"
-                            title="Modo escuro"
+                            title="Ativar modo escuro"
                         >
-
-                            <!-- Ícone inicial da lua. -->
-                            <span id="iconeTema">☾</span>
-
+                            ☾
                         </button>
 
                     </li>
@@ -151,133 +110,65 @@
     </nav>
 
 
-    <!-- ================================================= -->
-    <!-- CONTEÚDO PRINCIPAL -->
-    <!-- ================================================= -->
+    <!-- ================= HERO ================= -->
 
     <main>
 
+        <section class="hero">
 
-        <!-- ================================================= -->
-        <!-- HERO -->
-        <!-- ================================================= -->
-
-        <section id="inicio" class="hero-section">
-
-            <!-- Container principal da seção. -->
             <div class="container">
 
-                <!-- Divide o conteúdo em duas colunas. -->
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center">
 
-                    <!-- Coluna dos textos. -->
+                    <!-- Texto -->
                     <div class="col-lg-6">
 
-                        <!-- Pequena frase de destaque. -->
-                        <span class="eyebrow">
-                            🐾 CUIDADO QUE VEM DO CORAÇÃO
+                        <span class="badge-pet">
+                            🐾 Cuidando de quem você ama
                         </span>
 
-                        <!-- Título principal. -->
                         <h1>
                             Tudo para o seu
                             <span>melhor amigo.</span>
                         </h1>
 
-                        <!-- Texto de apresentação. -->
-                        <p class="hero-text">
-                            Encontre produtos, acessórios e serviços
-                            pensados para deixar seu pet mais feliz,
-                            saudável e confortável.
+                        <p>
+                            Encontre produtos, serviços e informações
+                            para deixar a vida do seu pet ainda mais
+                            feliz e saudável.
                         </p>
 
+                        <div class="hero-buttons">
 
-                        <!-- Área dos botões. -->
-                        <div class="hero-actions">
-
-                            <!-- Botão principal. -->
                             <a
-                                href="#produtos"
+                                href="produtos.html"
                                 class="btn btn-pet"
                             >
-                                Explorar produtos
+                                Ver produtos
                             </a>
 
-                            <!-- Botão secundário. -->
                             <a
-                                href="#servicos"
-                                class="hero-link"
+                                href="servicos.html"
+                                class="btn btn-outline-pet"
                             >
-                                Conhecer serviços →
+                                Conhecer serviços
                             </a>
-
-                        </div>
-
-
-                        <!-- Pequenos indicadores abaixo dos botões. -->
-                        <div class="hero-info">
-
-                            <!-- Primeiro indicador. -->
-                            <div>
-                                <strong>+500</strong>
-                                <span>Pets felizes</span>
-                            </div>
-
-                            <!-- Segundo indicador. -->
-                            <div>
-                                <strong>100%</strong>
-                                <span>Carinho</span>
-                            </div>
-
-                            <!-- Terceiro indicador. -->
-                            <div>
-                                <strong>24h</strong>
-                                <span>Atendimento</span>
-                            </div>
 
                         </div>
 
                     </div>
 
 
-                    <!-- Coluna da imagem. -->
+                    <!-- Imagem -->
                     <div class="col-lg-6">
 
-                        <!-- Área que contém a imagem. -->
-                        <div class="hero-image-card">
+                        <div class="hero-image">
 
-                            <!-- Imagem principal. -->
                             <img
-                                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+                                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80"
                                 alt="Cachorro feliz"
                             >
 
-                            <!-- Elemento decorativo. -->
-                            <div class="hero-decoration">
-                                🐾
-                            </div>
-
-                            <!-- Cartão flutuante. -->
-                            <div class="floating-badge">
-
-                                <!-- Ícone do cartão. -->
-                                <span>❤️</span>
-
-                                <!-- Textos do cartão. -->
-                                <div>
-
-                                    <strong>
-                                        Amor de sobra
-                                    </strong>
-
-                                    <small>
-                                        Para seu pet
-                                    </small>
-
-                                </div>
-
-                            </div>
-
                         </div>
 
                     </div>
@@ -289,472 +180,120 @@
         </section>
 
 
-        <!-- ================================================= -->
-        <!-- BENEFÍCIOS -->
-        <!-- ================================================= -->
+        <!-- ================= BENEFÍCIOS ================= -->
 
-        <section class="benefits-section">
+        <section class="section">
 
             <div class="container">
 
-                <div class="row g-3">
+                <div class="section-title">
 
-                    <!-- Benefício 1. -->
-                    <div class="col-md-4">
-
-                        <div class="benefit-item">
-
-                            <span>🚚</span>
-
-                            <div>
-                                <strong>Entrega rápida</strong>
-                                <small>
-                                    Receba seus produtos em casa.
-                                </small>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Benefício 2. -->
-                    <div class="col-md-4">
-
-                        <div class="benefit-item">
-
-                            <span>🩺</span>
-
-                            <div>
-                                <strong>Cuidados especiais</strong>
-                                <small>
-                                    Serviços pensados para seu pet.
-                                </small>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Benefício 3. -->
-                    <div class="col-md-4">
-
-                        <div class="benefit-item">
-
-                            <span>✨</span>
-
-                            <div>
-                                <strong>Qualidade garantida</strong>
-                                <small>
-                                    Produtos selecionados.
-                                </small>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- PRODUTOS -->
-        <!-- ================================================= -->
-
-        <section id="produtos" class="content-section">
-
-            <div class="container">
-
-                <!-- Cabeçalho da seção. -->
-                <div class="section-heading">
-
-                    <span class="eyebrow">
-                        PARA TODOS OS MOMENTOS
-                    </span>
+                    <span>POR QUE ESCOLHER A GENTE?</span>
 
                     <h2>
-                        Produtos para seu pet
+                        Tudo pensado para o seu pet
+                    </h2>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+
+                        <div class="info-card">
+
+                            <div class="card-icon">
+                                🐶
+                            </div>
+
+                            <h3>
+                                Amor pelos animais
+                            </h3>
+
+                            <p>
+                                Trabalhamos pensando sempre
+                                no bem-estar e na felicidade
+                                dos animais.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-card">
+
+                            <div class="card-icon">
+                                ⭐
+                            </div>
+
+                            <h3>
+                                Produtos de qualidade
+                            </h3>
+
+                            <p>
+                                Produtos selecionados para
+                                proporcionar conforto e diversão
+                                para o seu pet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-card">
+
+                            <div class="card-icon">
+                                ❤️
+                            </div>
+
+                            <h3>
+                                Cuidado especial
+                            </h3>
+
+                            <p>
+                                Seu animal recebe atenção
+                                e carinho em todos os momentos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHAMADA ================= -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <h2>
+                        Seu pet merece o melhor!
                     </h2>
 
                     <p>
-                        Tudo para deixar seu companheiro confortável,
-                        saudável e cheio de energia.
+                        Confira nossos produtos e serviços.
                     </p>
 
-                </div>
-
-
-                <!-- Cards dos produtos. -->
-                <div class="row g-4">
-
-
-                    <!-- Produto para cães. -->
-                    <div class="col-md-4">
-
-                        <article class="pet-card">
-
-                            <!-- Imagem do cachorro. -->
-                            <div class="card-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=85"
-                                    alt="Cachorro"
-                                >
-
-                                <!-- Etiqueta da categoria. -->
-                                <span class="image-tag">
-                                    CÃES
-                                </span>
-
-                            </div>
-
-
-                            <!-- Conteúdo do cartão. -->
-                            <div class="card-content">
-
-                                <h3>
-                                    Para seu cachorro
-                                </h3>
-
-                                <p>
-                                    Rações, coleiras, brinquedos,
-                                    camas e muito mais.
-                                </p>
-
-                                <a href="#" class="card-link">
-                                    Ver produtos →
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- Produto para gatos. -->
-                    <div class="col-md-4">
-
-                        <article class="pet-card">
-
-                            <div class="card-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=85"
-                                    alt="Gato"
-                                >
-
-                                <span class="image-tag">
-                                    GATOS
-                                </span>
-
-                            </div>
-
-
-                            <div class="card-content">
-
-                                <h3>
-                                    Para seu gato
-                                </h3>
-
-                                <p>
-                                    Conforto, diversão e produtos
-                                    para todas as fases.
-                                </p>
-
-                                <a href="#" class="card-link">
-                                    Ver produtos →
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- Produto de acessórios. -->
-                    <div class="col-md-4">
-
-                        <article class="pet-card">
-
-                            <div class="card-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=85"
-                                    alt="Pet"
-                                >
-
-                                <span class="image-tag">
-                                    ACESSÓRIOS
-                                </span>
-
-                            </div>
-
-
-                            <div class="card-content">
-
-                                <h3>
-                                    Acessórios
-                                </h3>
-
-                                <p>
-                                    Produtos bonitos, úteis e pensados
-                                    para o bem-estar.
-                                </p>
-
-                                <a href="#" class="card-link">
-                                    Conhecer →
-                                </a>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- SERVIÇOS -->
-        <!-- ================================================= -->
-
-        <section
-            id="servicos"
-            class="content-section service-section"
-        >
-
-            <div class="container">
-
-                <div class="row align-items-center g-5">
-
-                    <!-- Texto dos serviços. -->
-                    <div class="col-lg-6">
-
-                        <span class="eyebrow">
-                            ✨ CUIDADO DE VERDADE
-                        </span>
-
-                        <h2>
-                            Banho & Tosa com muito carinho.
-                        </h2>
-
-                        <p class="section-description">
-                            Nossa equipe cuida do seu pet com atenção,
-                            conforto e segurança para que ele saia
-                            limpinho, cheiroso e ainda mais bonito.
-                        </p>
-
-
-                        <!-- Caixa da promoção. -->
-                        <div class="promo-box">
-
-                            <strong>
-                                15% OFF
-                            </strong>
-
-                            <span>
-                                Banho + tosa nesta semana.
-                            </span>
-
-                        </div>
-
-
-                        <!-- Botão de agendamento. -->
-                        <a
-                            href="#contato"
-                            class="btn btn-pet"
-                        >
-                            Agendar horário
-                        </a>
-
-                    </div>
-
-
-                    <!-- Imagem do serviço. -->
-                    <div class="col-lg-6">
-
-                        <div class="service-image-wrapper">
-
-                            <img
-                                class="service-image"
-                                src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1000&q=85"
-                                alt="Cachorro recebendo cuidados"
-                            >
-
-                            <!-- Pequeno detalhe visual. -->
-                            <div class="service-badge">
-                                🛁
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- CUIDADOS -->
-        <!-- ================================================= -->
-
-        <section
-            id="cuidados"
-            class="content-section"
-        >
-
-            <div class="container">
-
-                <!-- Cabeçalho centralizado. -->
-                <div class="section-heading centered">
-
-                    <span class="eyebrow">
-                        POR QUE ESCOLHER A GENTE?
-                    </span>
-
-                    <h2>
-                        Feito para quem ama de verdade.
-                    </h2>
-
-                    <p>
-                        Mais que uma loja, um lugar pensado para
-                        cuidar de quem faz parte da sua família.
-                    </p>
-
-                </div>
-
-
-                <!-- Cards de diferenciais. -->
-                <div class="row g-4">
-
-
-                    <!-- Diferencial 1. -->
-                    <div class="col-md-4">
-
-                        <div class="feature-card">
-
-                            <div class="feature-icon">
-                                🐾
-                            </div>
-
-                            <h3>
-                                Atendimento próximo
-                            </h3>
-
-                            <p>
-                                Tratamos cada pet como único e
-                                entendemos o que ele precisa.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Diferencial 2. -->
-                    <div class="col-md-4">
-
-                        <div class="feature-card">
-
-                            <div class="feature-icon">
-                                🌱
-                            </div>
-
-                            <h3>
-                                Bem-estar em primeiro lugar
-                            </h3>
-
-                            <p>
-                                Selecionamos produtos pensando
-                                na saúde e qualidade de vida.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Diferencial 3. -->
-                    <div class="col-md-4">
-
-                        <div class="feature-card">
-
-                            <div class="feature-icon">
-                                💚
-                            </div>
-
-                            <h3>
-                                Paixão por pets
-                            </h3>
-
-                            <p>
-                                Um espaço feito especialmente
-                                para quem realmente ama animais.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- CONTATO -->
-        <!-- ================================================= -->
-
-        <section
-            id="contato"
-            class="contact-section"
-        >
-
-            <div class="container">
-
-                <div class="contact-box">
-
-                    <!-- Texto do contato. -->
-                    <div>
-
-                        <span class="eyebrow">
-                            VAMOS CONVERSAR?
-                        </span>
-
-                        <h2>
-                            Seu pet merece o melhor.
-                        </h2>
-
-                        <p>
-                            Entre em contato com nossa equipe
-                            e descubra como podemos ajudar.
-                        </p>
-
-                    </div>
-
-
-                    <!-- Botão de contato. -->
                     <a
-                        href="mailto:contato@meuamigopet.com"
-                        class="btn contact-button"
+                        href="contato.html"
+                        class="btn btn-light"
                     >
-                        Falar com a gente →
+                        Entre em contato
                     </a>
 
                 </div>
@@ -766,100 +305,39 @@
     </main>
 
 
-    <!-- ================================================= -->
-    <!-- RODAPÉ -->
-    <!-- ================================================= -->
+    <!-- ================= FOOTER ================= -->
 
-    <footer class="site-footer">
+    <footer>
 
         <div class="container">
 
-            <div class="row g-5">
+            <div class="row">
 
-
-                <!-- Informações da empresa. -->
-                <div class="col-lg-5">
-
-                    <div class="footer-brand">
-
-                        <span class="brand-icon">
-                            🐾
-                        </span>
-
-                        <strong>
-                            Meu Amigo Pet
-                        </strong>
-
-                    </div>
-
-                    <p>
-                        Carinho, cuidado e tudo o que seu melhor
-                        amigo precisa em um só lugar.
-                    </p>
-
-                </div>
-
-
-                <!-- Links rápidos. -->
-                <div class="col-6 col-lg-3">
+                <div class="col-md-6">
 
                     <h4>
-                        Navegação
-                    </h4>
-
-                    <a href="#inicio">
-                        Início
-                    </a>
-
-                    <a href="#produtos">
-                        Produtos
-                    </a>
-
-                    <a href="#servicos">
-                        Serviços
-                    </a>
-
-                    <a href="#cuidados">
-                        Cuidados
-                    </a>
-
-                </div>
-
-
-                <!-- Contato. -->
-                <div class="col-6 col-lg-4">
-
-                    <h4>
-                        Contato
+                        🐾 Meu Amigo Pet
                     </h4>
 
                     <p>
-                        📍 Rua dos Amigos, 100
-                    </p>
-
-                    <p>
-                        📞 (00) 00000-0000
-                    </p>
-
-                    <p>
-                        ✉️ contato@meuamigopet.com
+                        Cuidando dos seus melhores amigos
+                        com carinho e dedicação.
                     </p>
 
                 </div>
 
-            </div>
 
+                <div class="col-md-6 text-md-end">
 
-            <!-- Parte inferior do rodapé. -->
-            <div class="footer-bottom">
+                    <p>
+                        © 2026 Meu Amigo Pet
+                    </p>
 
-                <span>
-                    © 2026 Meu Amigo Pet
-                </span>
+                    <p>
+                        Feito com ❤️ para os pets
+                    </p>
 
-                <span>
-                    Feito com 🐾 e carinho.
-                </span>
+                </div>
 
             </div>
 
@@ -868,12 +346,12 @@
     </footer>
 
 
-    <!-- Importa o JavaScript do Bootstrap. -->
+    <!-- Bootstrap JavaScript -->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- Conecta o HTML ao nosso JavaScript. -->
+    <!-- Nosso JavaScript -->
     <script src="js/script.js"></script>
 
 </body>

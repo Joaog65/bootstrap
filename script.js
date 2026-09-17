@@ -1,139 +1,111 @@
+// Espera todo o HTML terminar de carregar
+document.addEventListener("DOMContentLoaded", function () {
+  // Procura o botão responsável pelo modo escuro
+  const btnTema = document.getElementById("btnTema");
 
-// Espera o HTML terminar de carregar antes de executar o JavaScript.
-document.addEventListener("DOMContentLoaded", () => {
+  // Procura o elemento body da página
+  const body = document.body;
 
+  // Verifica se existe uma preferência de tema salva
+  const temaSalvo = localStorage.getItem("tema");
 
-    // Procura o botão responsável por trocar o tema.
-    const botaoTema = document.getElementById("btnTema");
+  // Se o usuário já escolheu o modo escuro anteriormente
+  if (temaSalvo === "escuro") {
+    // Adiciona a classe de modo escuro ao body
+    body.classList.add("modo-escuro");
+  }
 
+  // Atualiza o ícone do botão
+  function atualizarIcone() {
+    // Verifica se o modo escuro está ativado
+    const modoEscuro = body.classList.contains("modo-escuro");
 
-    // Procura o elemento que mostra a lua ou o sol.
-    const iconeTema = document.getElementById("iconeTema");
+    // Se o botão existir
+    if (btnTema) {
+      // No modo escuro mostra o sol
+      if (modoEscuro) {
+        btnTema.textContent = "☼";
 
+        btnTema.setAttribute("aria-label", "Ativar modo claro");
 
-    // Procura o tema salvo anteriormente no navegador.
-    const temaSalvo = localStorage.getItem("tema");
+        btnTema.setAttribute("title", "Ativar modo claro");
+      }
 
+      // No modo claro mostra a lua
+      else {
+        btnTema.textContent = "☾";
 
-    // Verifica se o usuário escolheu o modo escuro anteriormente.
-    if (temaSalvo === "escuro") {
+        btnTema.setAttribute("aria-label", "Ativar modo escuro");
 
-        // Adiciona a classe responsável pelo modo escuro.
-        document.body.classList.add("modo-escuro");
-
+        btnTema.setAttribute("title", "Ativar modo escuro");
+      }
     }
+  }
 
+  // Atualiza o ícone assim que a página abre
+  atualizarIcone();
 
-    // Atualiza o ícone quando a página é carregada.
-    atualizarIcone();
+  // Verifica se o botão existe
+  if (btnTema) {
+    // Cria a função executada ao clicar no botão
+    btnTema.addEventListener("click", function () {
+      // Ativa ou desativa o modo escuro
+      body.classList.toggle("modo-escuro");
 
+      // Verifica qual modo está ativo
+      const modoEscuro = body.classList.contains("modo-escuro");
 
-    // Detecta quando o usuário clica no botão de tema.
-    botaoTema.addEventListener("click", alternarTema);
+      // Salva a escolha do usuário
+      if (modoEscuro) {
+        localStorage.setItem("tema", "escuro");
+      } else {
+        localStorage.setItem("tema", "claro");
+      }
 
+      // Atualiza o ícone
+      atualizarIcone();
+    });
+  }
 
-    // Cria a função responsável por alternar entre os temas.
-    function alternarTema() {
+  // Seleciona todos os links do menu
+  const linksMenu = document.querySelectorAll(".navbar .nav-link");
 
-        // Adiciona ou remove a classe do modo escuro.
-        document.body.classList.toggle("modo-escuro");
+  // Seleciona o menu mobile do Bootstrap
+  const menu = document.getElementById("menuPrincipal");
 
-
-        // Verifica se o modo escuro está ativo.
-        const modoEscuroAtivo =
-            document.body.classList.contains("modo-escuro");
-
-
-        // Salva a preferência do usuário no navegador.
-        localStorage.setItem(
-            "tema",
-            modoEscuroAtivo ? "escuro" : "claro"
-        );
-
-
-        // Atualiza o ícone da lua ou do sol.
-        atualizarIcone();
-
-    }
-
-
-    // Cria a função que controla o ícone do botão.
-    function atualizarIcone() {
-
-        // Verifica se o modo escuro está ativo.
-        const modoEscuroAtivo =
-            document.body.classList.contains("modo-escuro");
-
-
-        // Mostra o sol no modo escuro.
-        if (modoEscuroAtivo) {
-
-            // Coloca um sol minimalista no botão.
-            iconeTema.textContent = "☼";
-
-        } else {
-
-            // Coloca uma lua minimalista no botão.
-            iconeTema.textContent = "☾";
-
-        }
-
-
-        // Atualiza a descrição para leitores de tela.
-        botaoTema.setAttribute(
-            "aria-label",
-            modoEscuroAtivo
-                ? "Ativar modo claro"
-                : "Ativar modo escuro"
-        );
-
-
-        // Atualiza a descrição exibida ao passar o mouse.
-        botaoTema.setAttribute(
-            "title",
-            modoEscuroAtivo
-                ? "Modo claro"
-                : "Modo escuro"
-        );
-
-    }
-
-
-    // Seleciona todos os links da navbar.
-    const linksNavbar =
-        document.querySelectorAll(".nav-link");
-
-
-    // Percorre cada link encontrado.
-    linksNavbar.forEach((link) => {
-
-        // Detecta quando um link é clicado.
-        link.addEventListener("click", () => {
-
-            // Procura o menu responsivo do Bootstrap.
-            const menu =
-                document.getElementById("menuPrincipal");
-
-
-            // Verifica se o menu está aberto.
-            if (menu.classList.contains("show")) {
-
-                // Cria uma instância do componente Collapse.
-                const menuBootstrap =
-                    bootstrap.Collapse.getInstance(menu);
-
-
-                // Fecha o menu no celular.
-                if (menuBootstrap) {
-
-                    menuBootstrap.hide();
-
-                }
-
-            }
-
-        });
-
+  // Verifica se o menu existe
+  if (menu) {
+    // Cria o controlador do menu Bootstrap
+    const menuBootstrap = bootstrap.Collapse.getOrCreateInstance(menu, {
+      toggle: false,
     });
 
+    // Adiciona evento em cada link
+    linksMenu.forEach(function (link) {
+      link.addEventListener("click", function () {
+        // Verifica se a tela está no tamanho mobile
+        if (window.innerWidth < 992) {
+          // Fecha o menu depois de clicar
+          menuBootstrap.hide();
+        }
+      });
+    });
+  }
+
+  // Seleciona o formulário da página de contato
+  const formulario = document.querySelector(".contact-form form");
+
+  // Verifica se o formulário existe
+  if (formulario) {
+    // Impede que a página recarregue ao enviar
+    formulario.addEventListener("submit", function (evento) {
+      evento.preventDefault();
+
+      // Exibe uma mensagem simples
+      alert("Mensagem enviada com sucesso! 🐾");
+
+      // Limpa os campos
+      formulario.reset();
+    });
+  }
 });
